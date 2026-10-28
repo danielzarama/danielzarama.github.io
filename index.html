@@ -19,26 +19,34 @@ html{color-scheme:light}
 body{margin:0}
 img{max-width:100%}
 :root{
-  --ground:#F1F3EF;
-  --panel:#E6EAE4;
-  --ink:#1A1F1C;
-  --muted:#58615B;
-  --rule:#CDD3CB;
-  --accent:#2C4784;
-  --accent-soft:#DCE3F1;
+  --ground:#F4F3F0;
+  --panel:#E9E8E4;
+  --ink:#1C1D20;
+  --muted:#5D6068;
+  --rule:#D6D5D0;
+  --accent:#3B4C72;
+  --accent-soft:#E1E5EE;
+  --band:#1F2024;
+  --band-ink:#ECEBE8;
+  --band-muted:#A9A8A4;
+  --band-rule:#3A3B40;
+  --band-accent:#AEBCDD;
+  --band-accent-soft:#2C3140;
   --display:"Cormorant","Cormorant Garamond",Georgia,serif;
   --body:"Source Serif 4","Source Serif Pro",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#131614; --panel:#1B1F1C; --ink:#E4E7E1; --muted:#9BA39C;
-    --rule:#2E3430; --accent:#9DB2E6; --accent-soft:#1F2A40; color-scheme:dark;
+    --ground:#141518; --panel:#1A1B1F; --ink:#E6E5E2; --muted:#9C9EA4;
+    --rule:#2D2F34; --accent:#A3B3D9; --accent-soft:#232A3A;
+    --band:#0D0E10; --band-rule:#26282C; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#131614; --panel:#1B1F1C; --ink:#E4E7E1; --muted:#9BA39C;
-  --rule:#2E3430; --accent:#9DB2E6; --accent-soft:#1F2A40; color-scheme:dark;
+  --ground:#141518; --panel:#1A1B1F; --ink:#E6E5E2; --muted:#9C9EA4;
+  --rule:#2D2F34; --accent:#A3B3D9; --accent-soft:#232A3A;
+  --band:#0D0E10; --band-rule:#26282C; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
@@ -135,7 +143,13 @@ p{margin:0 0 1rem;max-width:40rem}
 
 /* writing band */
 .writing{background:var(--panel);border-bottom:0}
-.poems{border-top:1px solid var(--rule)}
+.band{
+  background:var(--band);color:var(--band-ink);
+  --ink:var(--band-ink);--muted:var(--band-muted);--rule:var(--band-rule);
+  --accent:var(--band-accent);--accent-soft:var(--band-accent-soft);
+}
+.poems{border-bottom:0}
+.band .ms img{border-color:transparent;box-shadow:0 2px 12px rgba(0,0,0,.35)}
 .poems h2{font-style:italic;font-weight:500}
 .ms{flex-basis:100%;margin-left:auto}
 .pieces li:has(.ms){align-items:baseline}
@@ -178,9 +192,16 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
 .cols .yr{margin-right:.5rem}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:3rem;align-items:start}
 .portrait{margin:0;padding-top:.5rem}
-.talk{margin:2.25rem 0 0;max-width:20rem}
-.talk img{display:block;width:100%;height:auto;border-radius:3px}
-.talk figcaption{font-family:var(--mono);font-size:.72rem;line-height:1.5;color:var(--muted);margin-top:.6rem;letter-spacing:.02em}
+.research-grid{grid-template-areas:"label main" "fig main";grid-template-rows:auto 1fr;row-gap:1.75rem}
+.research-grid>.label{grid-area:label}
+.research-grid>.research-main{grid-area:main}
+.talk{grid-area:fig;margin:0;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 5.5rem)}
+.talk img{display:block;width:100%;height:auto;border-radius:2px;filter:saturate(.85)}
+.talk figcaption{font-family:var(--mono);font-size:.66rem;line-height:1.55;color:var(--muted);margin-top:.6rem;letter-spacing:.02em}
+@media (max-width:760px){
+  .research-grid{grid-template-areas:"label" "main" "fig";grid-template-rows:auto;row-gap:1rem}
+  .talk{position:static;max-width:15rem;margin-top:1.5rem}
+}
 .portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px;filter:saturate(.92)}
 @media (max-width:760px){
   .hero-grid{grid-template-columns:minmax(0,1fr);gap:1.75rem}
@@ -204,11 +225,12 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
 </nav>
 
 <main id="top">
+  <div class="band">
   <header class="wrap hero">
    <div class="hero-grid">
    <div>
     <h1>Daniel Zarama Rojas</h1>
-    <p class="epigraph">Eyes [still] in development.</p>
+    <p class="epigraph">Eyes (still) in development.</p>
     <p class="lede">I am a PhD candidate in economics at the Bureau d'Économie Théorique et Appliquée (BETA; University of Lorraine, University of Strasbourg). My research focuses on the philosophy of economics, behavioral economics, and the epistemology of public policy. Currently, I study the significance of epistemic virtues and vices for economic decision-making and behavioral policy-design.</p>
     <dl class="facts">
       <div class="fact"><dt>Currently</dt><dd>ATER (full-time lecturer), Université de Lorraine, 2025–2027</dd></div>
@@ -220,6 +242,7 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
     </figure>
    </div>
   </header>
+  </div>
 
   <section id="about">
     <div class="wrap grid">
@@ -233,9 +256,13 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
   </section>
 
   <section id="research">
-    <div class="wrap grid">
+    <div class="wrap grid research-grid">
       <div class="label">Research</div>
-      <div>
+      <figure class="talk">
+        <img src="images/helsinki-2023-talk.jpg" width="675" height="900" alt="Daniel Zarama Rojas presenting in front of a slide that reads “Are biases vices?”" loading="lazy">
+        <figcaption>Workshop on Responsible Economics, TINT, University of Helsinki, October 2023</figcaption>
+      </figure>
+      <div class="research-main">
         <h2>Research</h2>
 
         <h3>Journal articles</h3>
@@ -277,11 +304,6 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
             </div>
           </li>
         </ol>
-
-        <figure class="talk">
-          <img src="images/helsinki-2023-talk.jpg" width="675" height="900" alt="Daniel Zarama Rojas presenting in front of a slide that reads “Are biases vices?”" loading="lazy">
-          <figcaption>Presenting at the Workshop on Responsible Economics, TINT, University of Helsinki, October 2023.</figcaption>
-        </figure>
 
         <h3>Book review</h3>
         <ol class="bib">
@@ -426,7 +448,7 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
     </div>
   </section>
 
-  <section id="poems" class="writing poems">
+  <section id="poems" class="band poems">
     <div class="wrap grid">
       <div class="label">Poems</div>
       <div>
@@ -464,7 +486,7 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
   </section>
 </main>
 
-<footer class="wrap">Daniel Zarama Rojas · Nancy · Updated October 2026</footer>
+<div class="band"><footer class="wrap">Daniel Zarama Rojas · Nancy · Updated October 2026</footer></div>
 
 <script>
 (function(){
