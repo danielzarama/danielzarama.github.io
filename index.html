@@ -9,6 +9,7 @@
 <meta property="og:title" content="Daniel Zarama Rojas">
 <meta property="og:description" content="Philosophy of economics, behavioral economics, and the epistemology of public policy.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://danielzarama.github.io/images/daniel-zarama-rojas.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231A1F1C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-style='italic' fill='%23F1F3EF' text-anchor='middle'%3EDZ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,6 +176,13 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.4rem 2rem;list-style:none;margin:0;padding:0}
 .cols li{line-height:1.45}
 .cols .yr{margin-right:.5rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:3rem;align-items:start}
+.portrait{margin:0;padding-top:.5rem}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px;filter:saturate(.92)}
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:1.75rem}
+  .portrait{order:-1;max-width:11rem;padding-top:0}
+}
 </style>
 </head>
 <body>
@@ -194,6 +202,8 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
 
 <main id="top">
   <header class="wrap hero">
+   <div class="hero-grid">
+   <div>
     <h1>Daniel Zarama Rojas</h1>
     <p class="epigraph">Eyes [still] in development.</p>
     <p class="lede">I am a PhD candidate in economics at the Bureau d'Économie Théorique et Appliquée (BETA; University of Lorraine, University of Strasbourg). My research focuses on the philosophy of economics, behavioral economics, and the epistemology of public policy. Currently, I study the significance of epistemic virtues and vices for economic decision-making and behavioral policy-design.</p>
@@ -201,6 +211,11 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
       <div class="fact"><dt>Currently</dt><dd>ATER (full-time lecturer), Université de Lorraine, 2025–2027</dd></div>
       <div class="fact"><dt>Dissertation</dt><dd><i>The Hazards of Psychology in Economics: A Virtue Epistemology Perspective</i>, advised by Samuel Ferey</dd></div>
     </dl>
+   </div>
+    <figure class="portrait">
+      <img src="images/daniel-zarama-rojas.jpg" width="800" height="1000" alt="Portrait of Daniel Zarama Rojas">
+    </figure>
+   </div>
   </header>
 
   <section id="about">
@@ -279,6 +294,7 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
             <div>
               <span class="ttl">Hayek’s Market: Adaptability, Institutionalization, and Limitations</span>
               <span class="meta">Master’s thesis, Université Paris 1 Panthéon-Sorbonne. Advisor: Annie L. Cot.</span>
+              <span class="links"><a href="files/Zarama_Rojas_2022_Hayeks_Market_masters_thesis.pdf">PDF ↗</a></span>
             </div>
           </li>
         </ol>
@@ -348,6 +364,7 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
 
         <div class="btns">
           <a class="btn" href="files/CV_Daniel_Zarama_Rojas_english.pdf">Full CV, English (PDF) ↗</a>
+          <a class="btn" href="files/CV_Daniel_Zarama_Rojas_francais.pdf" lang="fr">CV en français (PDF) ↗</a>
         </div>
       </div>
     </div>
