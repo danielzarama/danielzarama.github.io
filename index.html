@@ -178,7 +178,7 @@ p{margin:0 0 1rem;max-width:40rem}
 .pieces li:last-child{border-bottom:0}
 .pieces .pt{font-family:var(--display);font-size:1.3rem;font-weight:600}
 .pieces .pd{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
-.verse{flex-basis:100%;margin:.35rem 0 .2rem;font-family:var(--display);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--ink)}
+.verse{flex-basis:100%;margin:1rem 0 .25rem;font-family:var(--display);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--ink)}
 .pieces .pl{margin-left:auto;font-family:var(--mono);font-size:.78rem;display:flex;gap:1rem}
 @media (max-width:480px){.pieces .pl{margin-left:0;width:100%}}
 .note{font-size:.95rem;color:var(--muted)}
@@ -462,11 +462,17 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
         <ul class="pieces">
           <li>
             <span class="pt">Viator</span><span class="pd">2026 · EN</span>
-            <p class="verse" lang="en">In the underground for some time,<br>a lot of fellow humans.<br>Really beautiful: everyone’s travelling!</p>
+            <details class="ms" id="ms-viator">
+              <summary>Read poem</summary>
+              <p class="verse" lang="en">In the underground for some time,<br>a lot of fellow humans.<br>Really beautiful: everyone’s travelling!</p>
+            </details>
           </li>
           <li>
             <span class="pt">Compagnie</span><span class="pd">2025 · FR</span>
-            <p class="verse" lang="fr">La distance semble t’éloigner&nbsp;;<br>dans la brume, ta figure indistincte…<br>mon incapacité à la saisir<br>la rend évidente à moi</p>
+            <details class="ms" id="ms-compagnie">
+              <summary>Read poem</summary>
+              <p class="verse" lang="fr">La distance semble t’éloigner&nbsp;;<br>dans la brume, ta figure indistincte…<br>mon incapacité à la saisir<br>la rend évidente à moi</p>
+            </details>
           </li>
           <li>
             <span class="pt">El origen</span><span class="pd">2021 · ES</span>
