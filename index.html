@@ -178,6 +178,7 @@ p{margin:0 0 1rem;max-width:40rem}
 .pieces li:last-child{border-bottom:0}
 .pieces .pt{font-family:var(--display);font-size:1.3rem;font-weight:600}
 .pieces .pd{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.verse{flex-basis:100%;margin:.35rem 0 .2rem;font-family:var(--display);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--ink)}
 .pieces .pl{margin-left:auto;font-family:var(--mono);font-size:.78rem;display:flex;gap:1rem}
 @media (max-width:480px){.pieces .pl{margin-left:0;width:100%}}
 .note{font-size:.95rem;color:var(--muted)}
@@ -441,8 +442,8 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
         <h3>On films</h3>
         <p>With some friends, I set out to value a couple of films we like, and wrote short introductory texts proposing an interpretive key to what I appreciate most in them.</p>
         <ul class="pieces">
-          <li><span class="pt"><i>Your Name</i></span><span class="pd">Makoto Shinkai, 2016 · with Sofía Arcila · ES</span></li>
-          <li><span class="pt"><i>Midnight in Paris</i></span><span class="pd">Woody Allen, 2011 · ES</span></li>
+          <li><span class="pt"><i>Your Name</i></span><span class="pd">Makoto Shinkai, 2016 · with Sofía Arcila · ES, IT</span><span class="pl"><a href="files/films/your-name_introduccion_es.pdf" lang="es">Introducción ↗</a><a href="files/films/your-name_introduzione_it.pdf" lang="it">Introduzione ↗</a></span></li>
+          <li><span class="pt"><i>Midnight in Paris</i></span><span class="pd">Woody Allen, 2011 · ES</span><span class="pl"><a href="files/films/midnight-in-paris_0-preludio.pdf" lang="es">Preludio ↗</a><a href="files/films/midnight-in-paris_1-introduccion.pdf" lang="es">Introducción ↗</a></span></li>
         </ul>
       </div>
     </div>
@@ -457,10 +458,28 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
           <p>“There are more things in heaven and earth, Horatio, than are dreamt of in your philosophy.”</p>
           <cite>Shakespeare, Hamlet, 1.5.167–8</cite>
         </blockquote>
-        <p>Sometimes I try to express, through art, the way I discover and experience my life. These are humble attempts, still at a preliminary stage, kept as hand-written notes.</p>
+        <p>Sometimes I try to express, through art, the way I discover and experience my life. These are humble attempts, still at a preliminary stage; some are kept as hand-written notes.</p>
         <ul class="pieces">
           <li>
-            <span class="pt">La tierra de la espera</span><span class="pd">ES · 3 pages</span>
+            <span class="pt">Viator</span><span class="pd">2026 · EN</span>
+            <p class="verse" lang="en">In the underground for some time,<br>a lot of fellow humans.<br>Really beautiful: everyone’s travelling!</p>
+          </li>
+          <li>
+            <span class="pt">Compagnie</span><span class="pd">2025 · FR</span>
+            <p class="verse" lang="fr">La distance semble t’éloigner&nbsp;;<br>dans la brume, ta figure indistincte…<br>mon incapacité à la saisir<br>la rend évidente à moi</p>
+          </li>
+          <li>
+            <span class="pt">El origen</span><span class="pd">2021 · ES</span>
+            <details class="ms" id="ms-origen">
+              <summary>Read manuscript</summary>
+              <figure>
+                <img src="poems/el_origen.jpg" width="1250" height="1667" alt="Hand-written manuscript of the poem “El origen”, beginning “Hay un invitado / es misterioso, se ve quieto en la esquina”." loading="lazy">
+              </figure>
+            </details>
+          </li>
+          <li><span class="pt">El invitado</span><span class="pd">2021 · ES</span></li>
+          <li>
+            <span class="pt">La tierra de la espera</span><span class="pd">2020 · ES · 3 pages</span>
             <details class="ms" id="ms-tierra">
               <summary>Read manuscript</summary>
               <figure>
@@ -470,16 +489,6 @@ footer{padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;color:va
               </figure>
             </details>
           </li>
-          <li>
-            <span class="pt">El origen</span><span class="pd">ES</span>
-            <details class="ms" id="ms-origen">
-              <summary>Read manuscript</summary>
-              <figure>
-                <img src="poems/el_origen.jpg" width="1250" height="1667" alt="Hand-written manuscript of the poem “El origen”, beginning “Hay un invitado / es misterioso, se ve quieto en la esquina”." loading="lazy">
-              </figure>
-            </details>
-          </li>
-          <li><span class="pt">El invitado</span><span class="pd">ES</span></li>
         </ul>
       </div>
     </div>
